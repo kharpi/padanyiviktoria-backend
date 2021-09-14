@@ -12,7 +12,6 @@ const {
 	error_template,
 	simple_ok_template,
 } = require('../templates/return_messages.template');
-const roles = require('../../roles');
 const Users = db.User;
 
 /*
@@ -92,7 +91,7 @@ exports.role_update = async (req, res) => {
 /*
  ** GET ALL USERS DATA
  */
-exports.get_users = async (req, res) => {
+exports.get_users = async (_, res) => {
 	const user_data = await Users.findAll({
 		attributes: { exclude: ['password'] },
 	});

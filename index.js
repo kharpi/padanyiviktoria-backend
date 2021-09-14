@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const cors = require('cors');
+const morgan = require('morgan');
+
+app.use(morgan('dev'));
 
 app.use(function (req, _, next) {
 	if (req.headers['content-type'] === 'application/json;') {
@@ -10,9 +13,11 @@ app.use(function (req, _, next) {
 	next();
 });
 
+const whitelist = ['http://localhost:3000', 'https://padanyiviktoria.hu'];
+
 app.use(
 	cors({
-		origin: 'http://localhost:3000',
+		origin: whitelist,
 		credentials: true,
 	})
 );
@@ -28,6 +33,7 @@ const db = require('./models');
 db.sequelize.sync();
 
 require('./app/routes/users.routes')(app);
+require('./app/routes/files.routes')(app);
 
 const port = process.env.PORT || 5000;
 

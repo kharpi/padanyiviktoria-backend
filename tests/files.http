@@ -1,0 +1,4 @@
+### Get files
+GET http://localhost:5000/files HTTP/1.1
+pv-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiYWRtaW4iOnRydWUsImlhdCI6MTYzMTYzMjM1NCwiZXhwIjoxNjMxNzE4NzU0fQ.y9FGrHqAFasA3UpAj82TWslWEdrIxM-vMFZOakz9YLo
+
