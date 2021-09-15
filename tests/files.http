@@ -2,3 +2,7 @@
 GET http://localhost:5000/files HTTP/1.1
 pv-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiYWRtaW4iOnRydWUsImlhdCI6MTYzMTYzMjM1NCwiZXhwIjoxNjMxNzE4NzU0fQ.y9FGrHqAFasA3UpAj82TWslWEdrIxM-vMFZOakz9YLo
 
+### Delete file
+DELETE http://localhost:5000/files/favicon.png HTTP/1.1
+pv-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiYWRtaW4iOnRydWUsImlhdCI6MTYzMTcxODk5MiwiZXhwIjoxNjMxODA1MzkyfQ.tee7nrTiFTSCKitA2l6j1ujCp83MAu8vfDQqH5fShRo
+

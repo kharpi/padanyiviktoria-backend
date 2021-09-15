@@ -3,14 +3,14 @@ POST http://localhost:5000/user/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "login": "asdas",
+  "login": "asd",
   "password": "asd"
 }
 
 ### Get all users
 GET http://localhost:5000/user
 Content-Type: application/json
-pv-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiYWRtaW4iOnRydWUsImlhdCI6MTYzMTYzMjM1NCwiZXhwIjoxNjMxNzE4NzU0fQ.y9FGrHqAFasA3UpAj82TWslWEdrIxM-vMFZOakz9YLo
+pv-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiYWRtaW4iOnRydWUsImlhdCI6MTYzMTcxODk5MiwiZXhwIjoxNjMxODA1MzkyfQ.tee7nrTiFTSCKitA2l6j1ujCp83MAu8vfDQqH5fShRo
 
 ### Get specified user
 GET http://localhost:5000/user/3 HTTP/1.1
@@ -24,11 +24,11 @@ GET http://localhost:5000/user/roles HTTP/1.1
 ### Change user role
 PUT http://localhost:5000/user/roles HTTP/1.1
 Content-Type: application/json
-pv-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiYWRtaW4iOnRydWUsImlhdCI6MTYzMTYzMjM1NCwiZXhwIjoxNjMxNzE4NzU0fQ.y9FGrHqAFasA3UpAj82TWslWEdrIxM-vMFZOakz9YLo
+pv-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiYWRtaW4iOnRydWUsImlhdCI6MTYzMTcxODk5MiwiZXhwIjoxNjMxODA1MzkyfQ.tee7nrTiFTSCKitA2l6j1ujCp83MAu8vfDQqH5fShRo
 
 {
-  "id": 3,
-  "admin": true
+  "id": 4,
+  "admin": false
 }
 ### Register user
 POST http://localhost:5000/user HTTP/1.1

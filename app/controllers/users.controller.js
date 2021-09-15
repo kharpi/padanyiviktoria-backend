@@ -13,6 +13,7 @@ const {
 	simple_ok_template,
 } = require('../templates/return_messages.template');
 const Users = db.User;
+const roles = require('../../roles');
 
 /*
  ** USER LOGIN
@@ -22,10 +23,12 @@ exports.login = async (req, res) => {
 	if (error) return error_template(res, 400, error.details[0].message);
 
 	const user_data = await Users.findOne({ where: { login: req.body.login } });
-	if (!user_data) return error_template(res, 400, 'Bad request');
+	if (!user_data)
+		return error_template(res, 400, 'Hibás felhasználónév vagy jelszó!');
 
 	const validPass = await bcrypt.compare(req.body.password, user_data.password);
-	if (!validPass) return error_template(res, 401, 'Authentication error');
+	if (!validPass)
+		return error_template(res, 401, 'Hibás felhasználónév vagy jelszó!');
 	else {
 		const token = jwt.sign(
 			{ id: user_data.id, admin: user_data.admin },

@@ -29,9 +29,15 @@ module.exports = (app) => {
 		files.download_file
 	);
 
+	router.delete(
+		'/:file_name',
+		[upload.none(), auth, checkRole(roles.ADMIN)],
+		files.delete_file
+	);
+
 	router.post(
 		'/',
-		[upload.single('doc'), auth, checkRole(roles.ADMIN)],
+		[auth, checkRole(roles.ADMIN), upload.single('doc')],
 		files.upload_files
 	);
 

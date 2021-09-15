@@ -28,3 +28,11 @@ exports.download_file = (req, res) => {
 	}
 	res.download(file);
 };
+
+exports.delete_file = (req, res) => {
+	const file = `${uploadPath}/${req.params.file_name}`;
+	fs.unlink(file, (err) => {
+		if (err) return error_template(res, 500, 'Cannot delete file');
+		return simple_ok_template(res, 'Successfully deleted');
+	});
+};
