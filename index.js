@@ -13,7 +13,7 @@ app.use(function (req, _, next) {
 	next();
 });
 
-const whitelist = ['http://localhost:3000', 'https://padanyiviktoria.hu'];
+const whitelist = ['https://padanyiviktoria.hu'];
 
 app.use(
 	cors({
