@@ -5,7 +5,7 @@ const {
 	simple_ok_template,
 } = require('../templates/return_messages.template');
 
-const uploadDir = '../../homeworks';
+const uploadDir = '../../homework';
 const uploadPath = path.resolve(__dirname, uploadDir);
 
 exports.upload_homework = async (req, res) => {
