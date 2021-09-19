@@ -13,7 +13,7 @@ app.use(function (req, _, next) {
 	next();
 });
 
-const whitelist = ['https://padanyiviktoria.hu'];
+const whitelist = ['https://padanyiviktoria.hu', 'http://localhost:3000'];
 
 app.use(
 	cors({
@@ -34,6 +34,7 @@ db.sequelize.sync();
 
 require('./app/routes/users.routes')(app);
 require('./app/routes/files.routes')(app);
+require('./app/routes/homeworks.routes')(app);
 
 const port = process.env.PORT || 5000;
 
