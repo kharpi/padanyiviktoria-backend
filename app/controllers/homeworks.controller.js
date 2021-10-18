@@ -17,7 +17,10 @@ exports.upload_homework = async (req, res) => {
 };
 
 exports.get_homeworks = (_, res) => {
-	const file_list = fs.readdirSync(uploadPath).map((file) => file);
+	const file_list = fs.readdirSync(uploadPath).map((file) => {
+		const { birthtime } = fs.statSync(uploadPath + '/' + file);
+		return { file, birthtime: birthtime.toUTCString() };
+	});
 	simple_ok_template(res, file_list);
 };
 
